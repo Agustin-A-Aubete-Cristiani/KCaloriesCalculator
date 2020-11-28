@@ -12,39 +12,44 @@
 
   <div class="app">
     <div class="form-container">
-      <h1 class="form-container__title">Cálculo de KiloCalorías</h1>
-      
-      <form id="formulary">
+      <form id="formulary" class="form-container__formulary">
+        <h1 class="form-container__title">Cálculo de KiloCalorías</h1>
+<!-- Section one of formulary -->
         <h2 class="form-container__subtitle">Datos de la comida</h2>
-        <label for="foodWeight"> Peso:</label><br>
-        <input unit="gr" name="foodWeight" type="number">
-        
-        <div class="sectionTwo">
-          
+        <div class="form__section sectionOne">
+
           <div class="input">
-            
-            <label for="foodKCaloriesXPortion"> KCalorias x Porcion:</label><br>
-            <input unit="kc" name="foodKCaloriesXPortion" type="number">
+            <label for="foodWeight"> Peso Total:</label>
+            <input id="foodWeight" unit="gr" name="foodWeight" type="number">
           </div>
-          
+
           <div class="input">
-            
-            <label for="foodGramsXPortion"> Gramos x Porcion:</label><br>
-            <input unit="gr" name="foodGramsXPortion" type="number">
+            <label for="foodKCaloriesXPortion"> KCalorias x Porcion:</label>
+            <input id="foodKCaloriesXPortion" unit="kc" name="foodKCaloriesXPortion" type="number">
           </div>
-          
+
+          <div class="input">            
+            <label for="foodGramsXPortion"> Gramos x Porcion:</label>
+            <input id="foodGramsXPortion" unit="gr" name="foodGramsXPortion" type="number">
+          </div>
         </div>
-        
-        <h2 class="form-container__subtitle">Especificaciones:</h2>
-        
-        <label for="espPortions"> Porciones:</label><br>
-        <input unit="n° de porcion/es" name="espPortions" type="number">
-        
+<!-- Section two of formulary -->          
+        <h2 class="form-container__subtitle">Especificacion de porciones:</h2>
+        <div class="form__section sectionTwo">
+
+          <div class="input">
+            <label for="espPortions"> x Porcion:</label>
+            <input id="espPortions" unit="n° de porcion/es" name="espPortions" type="number">
+          </div>
+          <div class="input">
+            <label for="espGrams"> x Gramos:</label>
+            <input id="espGrams" unit="gr" name="espGrams" type="number">
+          </div>
+        </div>
         <input id="form__btn-calc" class="form__btn-calc" type="submit" value="calcular"></input>
-        
+          
       </form>
     </div>
-
     <div id="showCalc" class="showCalc"></div>
   </div>
     
