@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./src/icon/mainIcon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+  <title>Cálculo de KiloCalorias</title>
+</head>
+<body>
+
+
+  <div class="app">
+    <div class="form-container">
+      <h1 class="form-container__title">Cálculo de KiloCalorías</h1>
+      
+      <form id="formulary">
+        <h2 class="form-container__subtitle">Datos de la comida</h2>
+        <label for="foodWeight"> Peso:</label><br>
+        <input unit="gr" name="foodWeight" type="number">
+        
+        <div class="sectionTwo">
+          
+          <div class="input">
+            
+            <label for="foodKCaloriesXPortion"> KCalorias x Porcion:</label><br>
+            <input unit="kc" name="foodKCaloriesXPortion" type="number">
+          </div>
+          
+          <div class="input">
+            
+            <label for="foodGramsXPortion"> Gramos x Porcion:</label><br>
+            <input unit="gr" name="foodGramsXPortion" type="number">
+          </div>
+          
+        </div>
+        
+        <h2 class="form-container__subtitle">Especificaciones:</h2>
+        
+        <label for="espPortions"> Porciones:</label><br>
+        <input unit="n° de porcion/es" name="espPortions" type="number">
+        
+        <input id="form__btn-calc" class="form__btn-calc" type="submit" value="calcular"></input>
+        
+      </form>
+    </div>
+
+    <div id="showCalc" class="showCalc"></div>
+  </div>
+    
+    
+    <script src="./script.js"></script>
+  
+</body>
+</html>

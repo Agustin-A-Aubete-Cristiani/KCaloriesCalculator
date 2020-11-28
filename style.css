@@ -1,0 +1,122 @@
+:root {
+  font-size: 8px;
+  --border-radius-formulary: 10px;
+  --width-app: 80vw;
+}
+
+* {
+  padding: 0; margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #3b3b3b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+input {
+  padding: 4px; 
+  width: 100%;
+  border: none;
+  border-radius: 2px;
+  transition: margin-left .4s;
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
+
+/* input:focus {
+  margin-left: 5%;
+} */
+
+.form-container {
+  padding: 10px;
+  background-color: #000c;
+  color: #fff;
+  border-radius: var(--border-radius-formulary);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: var(--width-app);
+}
+
+.form-container {
+  display: flex;
+  flex-flow: wrap column;
+}
+
+.form-container__title {
+  text-align: center;
+  margin-bottom: 20px; padding-bottom: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.form-container__subtitle {
+  margin-bottom: 20px;
+}
+
+.form__btn-calc {
+  padding: 10px;
+  color: #fff;
+  background-color: #555;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .4rem;
+  transition: letter-spacing .4s;
+  border-radius: 2px;
+}
+
+.form__btn-calc:hover {
+  cursor: pointer;
+  letter-spacing: .8rem;
+}
+
+.sectionTwo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sectionTwo input {
+  width: 90%;
+}
+
+.results {
+  padding: 10px;
+  width: var(--width-app);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  text-align: center;
+  
+  font-size: 1.5rem;
+  background-color: lightgray;
+  color: #000;
+  border-bottom-left-radius: var(--border-radius-formulary);
+  border-bottom-right-radius: var(--border-radius-formulary);
+}
+
+.showCalc {
+  width: 50vw;
+}
+
+.results__subtitle {
+  margin: 20px 0;
+  margin-bottom: 0;
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 16px;
+    --width-app: 60vw;
+  }
+}
