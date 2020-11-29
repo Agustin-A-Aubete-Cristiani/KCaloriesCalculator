@@ -92,7 +92,7 @@ btnCalc.addEventListener("click", () => {
     
     // basic data
       const basicData = document.createElement("h2")
-      basicData.innerHTML = `Porcion Estandar`
+      basicData.innerHTML = `Porcion Estándar`
       basicData.setAttribute("class", "results__subtitle")
     
     // total Weight
