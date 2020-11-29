@@ -58,9 +58,9 @@ btnCalc.addEventListener("click", () => {
   //    restartData
   //    resultsProcess
   
-  function defineDecimals( num, decimals = 4 ) {
+  function defineDecimals( num, decimals = 1 ) {
     // .toFixed(decimals)
-    return (num)
+    return (num).toFixed(decimals)
   }
   
   function restartData ( info, inputs) {
