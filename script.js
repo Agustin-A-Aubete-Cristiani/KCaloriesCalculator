@@ -24,7 +24,7 @@ inputs.forEach( element => {
   const attributeData = element.getAttribute("name");
   
   element.setAttribute("autocomplete", "off");
-  element.setAttribute("placeholder", `Indique en (${attribute})`)
+  element.setAttribute("placeholder", `(${attribute})`)
   
   element.addEventListener("change", ({ target }) => {
     data[attributeData] = target.value;
@@ -58,7 +58,7 @@ btnCalc.addEventListener("click", () => {
   //    restartData
   //    resultsProcess
   
-  function defineDecimals( num, decimals = 1 ) {
+  function defineDecimals( num, decimals = 2 ) {
     // .toFixed(decimals)
     return (num).toFixed(decimals)
   }
@@ -73,7 +73,7 @@ btnCalc.addEventListener("click", () => {
       }
     }
     if( inputs ) {
-      inputs.forEach( el => el.value = "")
+      inputs.forEach( el => el.value = NaN)
     }
   }
   
@@ -101,7 +101,7 @@ btnCalc.addEventListener("click", () => {
         defineDecimals(
           (data.foodWeight / data.foodGramsXPortion) * data.foodKCaloriesXPortion
         )
-      }` 
+      } kc` 
 
     // total Portions
       const totalPortions = document.createElement("p")
@@ -109,7 +109,7 @@ btnCalc.addEventListener("click", () => {
         defineDecimals(
           data.foodWeight / data.foodGramsXPortion
         )
-      }`
+      } ud.`
     
     // especify data
       const especifies = document.createElement("h2")
@@ -126,7 +126,7 @@ btnCalc.addEventListener("click", () => {
         defineDecimals(
           ((data.foodWeight / data.espPortions || data.espGrams ) * data.foodKCaloriesXPortion ) / data.foodGramsXPortion
         )
-      }`
+      } kc/ud.`
 
     // grams for each especify portion
       const gramsPerPortions = document.createElement("p")
@@ -134,7 +134,7 @@ btnCalc.addEventListener("click", () => {
         defineDecimals(
           data.foodWeight / data.espPortions 
         )
-      }`
+      } gr/ud.`
       
     // portions according to grams
       const portionsAccordingToGrams = document.createElement("p")
@@ -142,7 +142,7 @@ btnCalc.addEventListener("click", () => {
         defineDecimals(
           data.foodWeight / data.espGrams
         )
-      }`
+      } ud./gr`
 
 
 // <-- containers -->
@@ -183,13 +183,20 @@ btnCalc.addEventListener("click", () => {
         // portionsAccordingToGrams
       ]
       
+      const inputOne = document.getElementById("espPortions")
+      const inputTwo = document.getElementById("espGrams")
+      if ( inputOne.value === "" && inputTwo.value === "") {
+        dataToShow.pop()
+        console.log("in" + dataToShow)
+      }
+      
       // process for render 
 
       var render = true
       
       if( data.foodGramsXPortion && data.foodWeight && data.foodKCaloriesXPortion) {
         for(let i = 0; i < inputs.length; i++) {
-          if( inputs[i].value <= 0 && inputs[i].value === NaN ) {
+          if( inputs[i].value <= 0 && !( inputs[i].name === "espPortions" || inputs[i].name === "espGrams" )  /*&& inputs[i].value === NaN*/ ) {
             render = false;
             return alert("No se admiten números negativos")
           }
